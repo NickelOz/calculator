@@ -13,6 +13,17 @@ class Button extends React.Component {
     }
 }
 
+class Screen extends React.Component {
+    render() {
+        const value = this.props.value
+        return (
+            <div id="screen">
+                <div>{value}</div>
+            </div>
+        )
+    }
+}
+
 class Calculator extends React.Component {
     constructor() {
         super()
@@ -21,22 +32,43 @@ class Calculator extends React.Component {
             currentOperator: null,
             previousTerm: null
         }
+        this.handleNumberChange = this.handleNumberChange.bind(this)
+    }
+
+    handleNumberChange(newNumber) {
+        this.setState({currentTerm: newNumber})
     }
 
     renderNumberButton(i) {
-        return <Button value={i} onClick={() => this.addNumber(i)}/>
+        return <Button value={i} onClick={() => this.handleNumberChange(i)}/>
     }
 
-    addNumber(i) {
-        this.setState({currentTerm: i}, () => {alert(`The current term is ${this.state.currentTerm}`)})
+    renderScreen(value) {
+        return <Screen value={value}/>
     }
 
     render() {
+        const currentTerm = this.state.currentTerm
         return (
             <div id="calculator">
-                {this.renderNumberButton(1)}
-                {this.renderNumberButton(2)}
-                {this.renderNumberButton(3)}
+                <div className="row">
+                    {this.renderScreen(currentTerm)}
+                </div>
+                <div className="row">
+                    {this.renderNumberButton(7)}
+                    {this.renderNumberButton(8)}
+                    {this.renderNumberButton(9)}
+                </div>
+                <div className="row">
+                    {this.renderNumberButton(4)}
+                    {this.renderNumberButton(5)}
+                    {this.renderNumberButton(6)}
+                </div>
+                <div className="row">
+                    {this.renderNumberButton(1)}
+                    {this.renderNumberButton(2)}
+                    {this.renderNumberButton(3)}
+                </div>
             </div>
         )
     }

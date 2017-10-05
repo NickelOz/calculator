@@ -1,82 +1,72 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 class Button extends React.Component {
-    render() {
-        return (
-            <div className="button" onClick={() => this.props.onClick()}>
-                {this.props.value}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="button" onClick={() => this.props.onClick()}>
+        {this.props.value}
+      </div>
+    );
+  }
 }
 
 class Screen extends React.Component {
-    render() {
-        const value = this.props.value
-        return (
-            <div id="screen">
-                <div>{value}</div>
-            </div>
-        )
-    }
+  render() {
+    const value = this.props.value;
+    return (
+      <div id="screen">
+        <div>{value}</div>
+      </div>
+    );
+  }
 }
 
 class Calculator extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            currentTerm: 0,
-            currentOperator: null,
-            previousTerm: null
-        }
-        this.handleNumberChange = this.handleNumberChange.bind(this)
-    }
+  constructor() {
+    super();
+    this.state = {
+      currentTerm: 0,
+      currentOperator: null,
+      previousTerm: null
+    };
+    this.handleNumberChange = this.handleNumberChange.bind(this);
+  }
 
-    handleNumberChange(newNumber) {
-        this.setState({currentTerm: newNumber})
-    }
+  handleNumberChange(newNumber) {
+    this.setState({ currentTerm: newNumber });
+  }
 
-    renderNumberButton(i) {
-        return <Button value={i} onClick={() => this.handleNumberChange(i)}/>
-    }
+  renderScreen(value) {
+    return <Screen value={value} />;
+  }
 
-    renderScreen(value) {
-        return <Screen value={value}/>
-    }
-
-    render() {
-        const currentTerm = this.state.currentTerm
-        return (
-            <div id="calculator">
-                <div className="row">
-                    {this.renderScreen(currentTerm)}
-                </div>
-                <div className="row">
-                    {this.renderNumberButton(7)}
-                    {this.renderNumberButton(8)}
-                    {this.renderNumberButton(9)}
-                </div>
-                <div className="row">
-                    {this.renderNumberButton(4)}
-                    {this.renderNumberButton(5)}
-                    {this.renderNumberButton(6)}
-                </div>
-                <div className="row">
-                    {this.renderNumberButton(1)}
-                    {this.renderNumberButton(2)}
-                    {this.renderNumberButton(3)}
-                </div>
+  render() {
+    const currentTerm = this.state.currentTerm;
+    const numbers = [[7, 8, 9], [4, 5, 6], [1, 2, 3]];
+    return (
+      <div id="calculator">
+        <div className="row">{this.renderScreen(currentTerm)}</div>
+        {numbers.map(row => {
+          return (
+            <div className="row">
+              {row.map(number => {
+                return (
+                  <Button
+                    value={number}
+                    onClick={() => {
+                      this.handleNumberChange(number);
+                    }}
+                  />
+                );
+              })}
             </div>
-        )
-    }
+          );
+        })}
+      </div>
+    );
+  }
 }
 
-
-ReactDOM.render(
-    <Calculator />,
-    document.getElementById('root')
-)
-
+ReactDOM.render(<Calculator />, document.getElementById("root"));

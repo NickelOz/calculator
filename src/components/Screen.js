@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
 class Screen extends React.Component {
   render() {
-    const value = this.props.value;
     return (
       <div id="screen">
-        <div>{value}</div>
+        <div>{this.props.value}</div>
       </div>
     );
   }

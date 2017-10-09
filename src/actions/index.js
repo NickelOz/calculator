@@ -22,5 +22,5 @@ export function performOperation(result) {
   return {
     type: PERFORM_OPERATION,
     result: result
-  }
-}
+  };
+};

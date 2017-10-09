@@ -2,6 +2,7 @@ import React from "react";
 import NumberButton from "../containers/NumberButton";
 import OperatorButton from "../containers/OperatorButton";
 import Screen from "../containers/Screen";
+import Operations from "../operations";
 
 class Calculator extends React.Component {
   render() {
@@ -23,7 +24,11 @@ class Calculator extends React.Component {
           );
         })}
         <div className="row">
-          <OperatorButton value="+" operation={ (a, b) => { return a + b; } }/>
+          { Operations.map( op => {
+            return (
+              <OperatorButton value={ op.operand } operation={ op.operation }/>
+            );
+          })}
         </div>
       </div>
     );

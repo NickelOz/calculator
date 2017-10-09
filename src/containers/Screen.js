@@ -16,6 +16,6 @@ const mapStateToProps = state => {
   };
 };
 
-const c = connect(mapStateToProps)(ScreenContainer)
+const c = connect(mapStateToProps)(ScreenContainer);
 
 export default c;

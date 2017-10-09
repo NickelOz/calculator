@@ -10,7 +10,7 @@ class OperatorButtonContainer extends React.Component {
         value={ this.props.value }
         onClick={ () => { this.props.onButtonClick( this.props.operation( this.props.leadingOperand, this.props.closingOperand ) ) } }
       />
-    )
+    );
   }
 }
 

@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import Button from "../components/Button";
 import { addTerm } from "../actions/index";
 
-class ButtonContainer extends React.Component {
+class NumberButtonContainer extends React.Component {
   render() {
     return (
       <Button
         value={ this.props.value }
-        onClick={() => { this.props.onButtonClick( this.props.value ); }}
+        onClick={ () => { this.props.onButtonClick( this.props.value ); }}
       />
     );
   }
@@ -22,6 +22,6 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-const c = connect(null, mapDispatchToProps)(ButtonContainer);
+const c = connect(null, mapDispatchToProps)(NumberButtonContainer);
 
 export default c;

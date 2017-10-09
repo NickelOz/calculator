@@ -1,6 +1,7 @@
 // actions
 export const ADD_TERM = "ADD_TERM";
 export const CLEAR_CALCULATOR = "CLEAR_CALCULATOR";
+export const PERFORM_OPERATION = "PERFORM_OPERATION";
 
 
 // action creators
@@ -16,3 +17,10 @@ export function clearScreen() {
     type: CLEAR_CALCULATOR
   };
 };
+
+export function performOperation(result) {
+  return {
+    type: PERFORM_OPERATION,
+    result: result
+  }
+}

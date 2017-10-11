@@ -1,35 +1,35 @@
-const addition = (a, b) => {
-  return a + b;
-};
+// const addition = (a, b) => {
+//   return a + b;
+// };
 
-const subtraction = (a, b) => {
-  return a - b;
-};
+// const subtraction = (a, b) => {
+//   return a - b;
+// };
 
-const multiplication = (a, b) => {
-  return a * b;
-};
+// const multiplication = (a, b) => {
+//   return a * b;
+// };
 
-const division = (a, b) => {
-  return a / b;
-};
+// const division = (a, b) => {
+//   return a / b;
+// };
 
 const operations = [
   {
     operand: "+",
-    operation: addition
+    operation: "ADDITION"
   },
   {
     operand: "-",
-    operation: subtraction
+    operation: "SUBTRACTION"
   },
   {
     operand: "x",
-    operation: multiplication
+    operation: "MULTIPLICATION"
   },
   {
     operand: "/",
-    operation: division
+    operation: "DIVISION"
   }
 ];
 

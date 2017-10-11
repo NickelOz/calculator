@@ -1,6 +1,8 @@
 import React from "react";
 import NumberButton from "../containers/NumberButton";
 import OperatorButton from "../containers/OperatorButton";
+import EqualsButton from "../containers/EqualsButton";
+import ClearButton from "../containers/ClearButton";
 import Screen from "../containers/Screen";
 import Operations from "../operations";
 
@@ -29,6 +31,10 @@ class Calculator extends React.Component {
               <OperatorButton value={ op.operand } operation={ op.operation }/>
             );
           })}
+        </div>
+        <div className="row">
+            <EqualsButton/>
+            <ClearButton/>
         </div>
       </div>
     );

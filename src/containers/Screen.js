@@ -5,7 +5,7 @@ import Screen from "../components/Screen";
 class ScreenContainer extends React.Component {
   render() {
     return (
-      <Screen value={this.props.value} />
+      <Screen value={(this.props.value !== null) ? this.props.value : "-"} />
     );
   }
 }

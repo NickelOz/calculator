@@ -1,7 +1,6 @@
 body {
     background-color: #eeeeee;
     font-family: 'Roboto Mono', monospace;
-    color: #eeeeee;
 }
 
 #root {
@@ -23,6 +22,7 @@ body {
     padding: 5px;
     margin: 0 auto;
     text-align: right;
+    color: #eeeeee;
     font-size: 24px;
     border: 3px solid #333333;
     background-color: #aaaaaa;
@@ -33,7 +33,8 @@ body {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
-    width: 60px;
+    color: #eeeeee;
+    width: 45px;
     height: 45px;
     border: 3px solid #333333;
     background-color: #aaaaaa;

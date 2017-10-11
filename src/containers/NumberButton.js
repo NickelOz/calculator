@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
       dispatch(addTerm(value));
     }
   };
-}
+};
 
 const c = connect(null, mapDispatchToProps)(NumberButtonContainer);
 

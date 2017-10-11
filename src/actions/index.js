@@ -1,6 +1,7 @@
 // actions
 export const ADD_TERM = "ADD_TERM";
 export const CLEAR_CALCULATOR = "CLEAR_CALCULATOR";
+export const SET_OPERATION = "SET_OPERATION";
 export const PERFORM_OPERATION = "PERFORM_OPERATION";
 
 
@@ -10,17 +11,23 @@ export function addTerm(number) {
     type: ADD_TERM,
     value: number
   };
-};
+}
 
-export function clearScreen() {
+export function clearCalculator() {
   return {
     type: CLEAR_CALCULATOR
   };
-};
+}
 
-export function performOperation(result) {
+export function setOperation(operation) {
   return {
-    type: PERFORM_OPERATION,
-    result: result
+    type: SET_OPERATION,
+    operation: operation
   };
-};
+}
+
+export function performOperation() {
+  return {
+    type: PERFORM_OPERATION
+  };
+}
